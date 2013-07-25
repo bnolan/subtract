@@ -9,7 +9,7 @@
     Explore
   </h1>
 
-  <a href="#posts/new" class="button right">New Post</a>
+  <a href="#posts/new" class="button right">Post</a>
 </div>
 
 <div class="splitter">
@@ -17,7 +17,7 @@
   <a href="#map">Cartographical</a>
 </div>
 
-<div class="background" style="background-color: #eee">
+<div class="background">
   <div class="header-card">
     <h3>
       Explore Posts

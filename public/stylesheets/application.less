@@ -8,7 +8,8 @@
   -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 }
 
-@border: #999;
+@border: #333;
+@color: #999; /* #9AD45B */
 
 body,html{
   margin: 0;
@@ -20,8 +21,8 @@ body,html{
 /* Common header bar */
 
 .header{
-  .gradient(#7BB3E0, #7BB3E0, #6Ba3d0);
   border-bottom: 1px solid @border;
+  .gradient(darken(@color, 40%), darken(@color, 40%), darken(@color, 20%);
   
   *{
     margin: 0;
@@ -30,10 +31,11 @@ body,html{
   h1{
     color: white;
     font-size: 20px;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     line-height: 40px;
     padding: 0 10px;
     display: inline-block;
+    /* todo: text-align: center;  */
   }
   
   button, .button{
@@ -42,16 +44,21 @@ body,html{
     font: inherit;
     line-height: 40px;
     padding: 0 10px;
-    .gradient(#B3DDFF, #B3DDFF, #a3cDeF);
-    color: #333;
-    text-shadow: 1px 1px 1px white;
+    .gradient(darken(@color, 20%), darken(@color, 20%), darken(@color, 10%);
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
   }
   
   .left{
     float: left;
     border-right: 1px solid @border;
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
   }
   
   .right{
@@ -68,6 +75,7 @@ body,html{
   padding: 0;
   margin: 0;
   border-top: 1px solid transparent;
+  background: darken(@color, 30%);
  
   .post-card{
     margin: 10px;
@@ -180,9 +188,24 @@ body,html{
   }
 }
 
+/* google completer */
+.pac-container{
+  border: none;
+  
+  border-top: 1px solid #ccc;
+
+  .pac-item{
+    font-size: 18px;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+    padding: 0 10px;
+  }
+}
+
 .posts-new{
   .f{
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0 10px 0;
     border-bottom: 1px solid @border;
     
     &.last{
@@ -194,7 +217,7 @@ body,html{
       font-size: 10px;
       color: #666;
       display: block;
-      padding-bottom: 5px;
+      padding: 0 10px 5px 10px;
     }
     
     input, textarea, button{
@@ -203,7 +226,12 @@ body,html{
       width: 100%;
       border: 1px solid #ccc;
       border-radius: 3px;
-      line-height: 25px;
+      color: #555;
+      line-height: 22px;
+      font-family: helvetica, sans-serif;
+      font-size: 18px;
+      padding: 0 10px;
+      border: none;
     }
     
     button{
@@ -227,9 +255,9 @@ body,html{
   .f-location{
     address{
       font-style: normal;
-      color: #666;
+      color: #aaa;
       font-size: 12px;
-      padding-top: 3px;
+      padding: 3px 10px 0 10px;
     }
     
     input{

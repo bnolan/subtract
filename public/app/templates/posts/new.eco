@@ -11,11 +11,13 @@
     <h1>
       New Post
     </h1>
+
+    <button type="submit" class="post right">Post</button>
   </div>
 
   <div class="f f-location">
-    <label>Name of the place you are writing about</label>
-    <input type="text" name="place" value="<%= @model.get('place') %>" autocapitalize="off" autocorrect="off" />
+    <!--label>Name of the place you are writing about</label-->
+    <input placeholder="Location" type="text" name="place" value="<%= @model.get('place') %>" autocapitalize="off" autocorrect="off" />
     <!--button>...</button-->
     <address></address>
     <input type="hidden" name="latitude">
@@ -28,12 +30,8 @@
     </div>
   </div>
   
-  <div class="f f-content disabled">
-    <label>Write your post here...</label>
-    <textarea name="content"><%= @model.get('content') %></textarea>
-  </div>
-  
-  <div class="f disabled last">
-    <button type="submit" class="submit">Publish this post</button>
+  <div class="f f-content">
+    <!--label>Write your post here...</label-->
+    <textarea placeholder="Content..." name="content"><%= @model.get('content') %></textarea>
   </div>
 </div>

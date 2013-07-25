@@ -43,7 +43,7 @@ this.$templates.postsExplore = function (__obj) {
     (function() {
       var post, _i, _len, _ref;
     
-      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="header">\n  <h1>\n    Explore\n  </h1>\n\n  <a href="#posts/new" class="button right">New Post</a>\n</div>\n\n<div class="splitter">\n  <a href="#">Chronological</a>\n  <a href="#map">Cartographical</a>\n</div>\n\n<div class="background" style="background-color: #eee">\n  <div class="header-card">\n    <h3>\n      Explore Posts\n    </h3>\n    <p class="meta">\n      <b>META</b> | <b>META</b> | <b>META</b>\n    </p>\n  </div>\n\n  ');
+      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="header">\n  <h1>\n    Explore\n  </h1>\n\n  <a href="#posts/new" class="button right">Post</a>\n</div>\n\n<div class="splitter">\n  <a href="#">Chronological</a>\n  <a href="#map">Cartographical</a>\n</div>\n\n<div class="background">\n  <div class="header-card">\n    <h3>\n      Explore Posts\n    </h3>\n    <p class="meta">\n      <b>META</b> | <b>META</b> | <b>META</b>\n    </p>\n  </div>\n\n  ');
     
       _ref = this.collection.models;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {

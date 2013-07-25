@@ -42,15 +42,15 @@ this.$templates.postsNew = function (__obj) {
   (function() {
     (function() {
     
-      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="posts-new">\n  <div class="header">\n    <a href="#" class="button left">&laquo;</a>\n\n    <h1>\n      New Post\n    </h1>\n  </div>\n\n  <div class="f f-location">\n    <label>Name of the place you are writing about</label>\n    <input type="text" name="place" value="');
+      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="posts-new">\n  <div class="header">\n    <a href="#" class="button left">&laquo;</a>\n\n    <h1>\n      New Post\n    </h1>\n\n    <button type="submit" class="post right">Post</button>\n  </div>\n\n  <div class="f f-location">\n    <!--label>Name of the place you are writing about</label-->\n    <input placeholder="Location" type="text" name="place" value="');
     
       __out.push(__sanitize(this.model.get('place')));
     
-      __out.push('" autocapitalize="off" autocorrect="off" />\n    <!--button>...</button-->\n    <address></address>\n    <input type="hidden" name="latitude">\n    <input type="hidden" name="longitude">\n    \n    <div id="map" style="display: none">\n      <small>Drag and zoom the map to center on the place you are describing</small>\n      <div id="map-container"></div>\n      <button class="submit confirm">Ok</button>\n    </div>\n  </div>\n  \n  <div class="f f-content disabled">\n    <label>Write your post here...</label>\n    <textarea name="content">');
+      __out.push('" autocapitalize="off" autocorrect="off" />\n    <!--button>...</button-->\n    <address></address>\n    <input type="hidden" name="latitude">\n    <input type="hidden" name="longitude">\n    \n    <div id="map" style="display: none">\n      <small>Drag and zoom the map to center on the place you are describing</small>\n      <div id="map-container"></div>\n      <button class="submit confirm">Ok</button>\n    </div>\n  </div>\n  \n  <div class="f f-content">\n    <!--label>Write your post here...</label-->\n    <textarea placeholder="Content..." name="content">');
     
       __out.push(__sanitize(this.model.get('content')));
     
-      __out.push('</textarea>\n  </div>\n  \n  <div class="f disabled last">\n    <button type="submit" class="submit">Publish this post</button>\n  </div>\n</div>');
+      __out.push('</textarea>\n  </div>\n</div>');
     
     }).call(this);
     
