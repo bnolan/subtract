@@ -4,7 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+trinity: 
+  place: Trinity Beach
+  content: After we left port douglas we went for a swim here at trinity beach. It's a beautiful beach, pretty steep though, the breakers dump right on the beach (which I learned to my chagrin). It's surf patrolled though, and there are toilets and showers for getting changed. And it was only 20 minutes drive from Cairns airport. Probably one of the nicest beaches of the trip.
+
+salsa:
+  place: Salsa Bar & Grill
+  content: On the flight over, I ran into a guy at Brisbane airport who lived in Port Douglas and he recommended this place to us. It had a nice deck with a great view of the sea. We had some delicious cocktails (virgin mary for rissa since she was still hungover haha), and some tapas. The fish tacos were awesome, but the rest was battered and depp friend and not as amazing as I was hoping. Still a nice place. Then we wandered across to the pier and watched people fish amonst the crocodiles.
+
+mirage:
+  place: Mirage Sheraton Port Douglas
+  content: We ended up staying here after getting a $130 a night "surprise hotel" deal from some website. It ended up being quite a nice resort. It's very 90s, and in need of an update, but the service was pretty good and the pools are amazing.
+     
 # column: value
 #
 two: {}

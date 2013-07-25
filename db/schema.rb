@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130703082841) do
   create_table "posts", :force => true do |t|
     t.string   "place"
     t.string   "title"
+    t.string   "address"
     t.text     "content"
     t.float    "latitude"
     t.float    "longitude"
