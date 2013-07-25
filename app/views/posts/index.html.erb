@@ -1,0 +1,15 @@
+<%= render :partial => 'new' %>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h3><%= post.place %></h3>
+    <h4><%= post.title %></h4>
+    <div class="content">
+      <%= simple_format post.content %>
+    </div>
+    <small class="meta">
+      Posted <%= time_ago_in_words post.created_at %> ago.
+    </small>
+    <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},15/320x240.png" %>
+  </div>
+<% end %>

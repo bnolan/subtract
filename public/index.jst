@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <title><%= project.name().capitalize() %></title>
+  <meta charset="utf-8">
+  <%= project.stylesheetIncludes() %>
+  <%= project.scriptIncludes() %>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<body>
+  Hello world.
+
+  <script>
+    window.app = new Application;
+
+    $(document).ready(function(){
+      app.start();
+    });
+  </script>
+</body>
+</html>

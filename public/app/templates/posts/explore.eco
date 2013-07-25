@@ -1,0 +1,42 @@
+<!--
+
+  Your eco template goes here...
+  
+-->
+
+<div class="header">
+  <h1>
+    Explore
+  </h1>
+
+  <a href="#posts/new" class="button right">New Post</a>
+</div>
+
+<div class="splitter">
+  <a href="#">Chronological</a>
+  <a href="#map">Cartographical</a>
+</div>
+
+<div class="background" style="background-color: #eee">
+  <div class="header-card">
+    <h3>
+      Explore Posts
+    </h3>
+    <p class="meta">
+      <b>META</b> | <b>META</b> | <b>META</b>
+    </p>
+  </div>
+
+  <% for post in @collection.models: %>
+    <div class="post-card" data-id="<%= post.id %>">
+      <h3><%= post.get('place') %></h3>
+      <img class="map" src="<%= @getMapUrl(post) %>">
+      <div class="content">
+        <%= post.get('content').slice(0,120) + "..." %>
+      </div>
+      <div class="meta">
+        <%= post.get('created_at') %>
+      </div>
+    </div>
+  <% end %>
+</div>
