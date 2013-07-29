@@ -2,6 +2,6 @@ class Post extends Backbone.Model
   initialize: ->
     # ...
 
-  url: "/posts"
+  urlRoot: "/posts"
   
 @Post = Post

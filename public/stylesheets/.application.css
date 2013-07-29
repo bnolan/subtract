@@ -4,17 +4,17 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-size: 12px;
+  font-size: 18px;
 }
 /* Common header bar */
 .header {
   border-bottom: 1px solid #333333;
-  background: #333333;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, #666666));
-  background: -ms-linear-gradient(bottom, #333333, #666666);
-  background: -moz-linear-gradient(center bottom, #333333 0%, #666666 100%);
-  background: -o-linear-gradient(#666666, #333333);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#333333', GradientType=0);
+  background: #666666;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #666666), color-stop(1, #999999));
+  background: -ms-linear-gradient(bottom, #666666, #999999);
+  background: -moz-linear-gradient(center bottom, #666666 0%, #999999 100%);
+  background: -o-linear-gradient(#999999, #666666);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#999999', endColorstr='#666666', GradientType=0);
 }
 .header * {
   margin: 0;
@@ -35,12 +35,12 @@ body, html {
   font: inherit;
   line-height: 40px;
   padding: 0 10px;
-  background: #666666;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #666666), color-stop(1, #808080));
-  background: -ms-linear-gradient(bottom, #666666, #808080);
-  background: -moz-linear-gradient(center bottom, #666666 0%, #808080 100%);
-  background: -o-linear-gradient(#808080, #666666);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#808080', endColorstr='#666666', GradientType=0);
+  background: #999999;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #999999), color-stop(1, #b3b3b3));
+  background: -ms-linear-gradient(bottom, #999999, #b3b3b3);
+  background: -moz-linear-gradient(center bottom, #999999 0%, #b3b3b3 100%);
+  background: -o-linear-gradient(#b3b3b3, #999999);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#999999', GradientType=0);
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   text-decoration: none;
@@ -51,7 +51,7 @@ body, html {
 .header .left {
   float: left;
   border-right: 1px solid #333333;
-  width: 20px;
+  width: 40px;
   text-align: center;
   font-size: 20px;
 }
@@ -59,14 +59,33 @@ body, html {
   float: right;
   border-left: 1px solid #333333;
 }
-.splitter, .header-card {
-  display: none;
+.splitter {
+  text-align: center;
+  border-bottom: 1px solid #333333;
+  height: 25px;
+}
+.splitter a {
+  display: inline-block;
 }
 .background {
   padding: 0;
   margin: 0;
   border-top: 1px solid transparent;
-  background: #4d4d4d;
+  background: #eee;
+}
+.background .header-card {
+  text-align: center;
+  margin: 30px 0;
+}
+.background .header-card * {
+  margin: 0;
+}
+.background .header-card h3 {
+  font-size: 1.5em;
+}
+.background .header-card .meta {
+  color: #999;
+  font-size: 12px;
 }
 .background .post-card {
   margin: 10px;
@@ -88,8 +107,8 @@ body, html {
 }
 .background .post-card h3 {
   line-height: 25px;
-  padding: 0 5px;
-  text-transform: uppercase;
+  font-size: 1em;
+  padding: 5px;
   color: #555;
   border-bottom: 1px solid #ccc;
 }
@@ -98,7 +117,7 @@ body, html {
   border-bottom: 1px solid #ccc;
 }
 .background .post-card div.content {
-  line-height: 20px;
+  line-height: 1.25em;
   padding: 0 5px;
   color: #555;
 }
@@ -166,10 +185,10 @@ body, html {
   border-top: 1px solid #ccc;
 }
 .pac-container .pac-item {
-  font-size: 18px;
+  font-size: 12px;
   color: #555;
   border-bottom: 1px solid #ccc;
-  line-height: 30px;
+  line-height: 26px;
   padding: 0 10px;
 }
 .posts-new .f {

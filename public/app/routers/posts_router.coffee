@@ -4,6 +4,7 @@ class PostsRouter extends Backbone.Router
     "posts/new" : "create"
     "posts/:id" : "show"
     "" : "explore"
+    "map" : "map"
 
   show: (id) ->
     new PostsShowView { 
@@ -11,14 +12,26 @@ class PostsRouter extends Backbone.Router
       model : app.getPost(id)
     }
     
-  create: (id) ->
+  create: ->
     new PostsNewView { 
       el : $('body') 
       model : new Post
     }
+    
+  edit: (id) ->
+    new PostsNewView { 
+      el : $('body') 
+      model : app.getPost(id)
+    }
 
   explore: ->
     new PostsExploreView { 
+      el : $('body') 
+      collection : app.getPublicPosts()
+    }
+
+  map: ->
+    new PostsMapView { 
       el : $('body') 
       collection : app.getPublicPosts()
     }

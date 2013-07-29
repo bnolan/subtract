@@ -1,0 +1,22 @@
+<!--
+
+  Your eco template goes here...
+  
+-->
+
+<div class="posts-map">
+  <div class="header">
+    <a href="#" class="button left">&laquo;</a>
+
+    <h1>
+      Cartography
+    </h1>
+  </div>
+
+  <div id="map" style="height: 480px">
+  </div>
+  
+  <div id="search">
+    <input type="search" />
+  </div>
+</duv>

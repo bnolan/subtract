@@ -3,6 +3,7 @@ javascripts:
   - 'lib/jquery.js'
   - 'lib/underscore.js'
   - 'lib/backbone.js'
+  - 'lib/markerclusterer.js'
   - 'app/routers/*.coffee'
   - 'app/views/**/*.coffee'
   - 'app/models/*.coffee'

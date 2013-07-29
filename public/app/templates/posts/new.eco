@@ -12,7 +12,9 @@
       New Post
     </h1>
 
-    <button type="submit" class="post right">Post</button>
+    <button type="submit" class="post right">
+      <%= if @model.isNew() then "Post" else "Save" %>
+    </button>
   </div>
 
   <div class="f f-location">

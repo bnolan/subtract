@@ -42,7 +42,11 @@ this.$templates.postsNew = function (__obj) {
   (function() {
     (function() {
     
-      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="posts-new">\n  <div class="header">\n    <a href="#" class="button left">&laquo;</a>\n\n    <h1>\n      New Post\n    </h1>\n\n    <button type="submit" class="post right">Post</button>\n  </div>\n\n  <div class="f f-location">\n    <!--label>Name of the place you are writing about</label-->\n    <input placeholder="Location" type="text" name="place" value="');
+      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="posts-new">\n  <div class="header">\n    <a href="#" class="button left">&laquo;</a>\n\n    <h1>\n      New Post\n    </h1>\n\n    <button type="submit" class="post right">\n      ');
+    
+      __out.push(__sanitize(this.model.isNew() ? "Post" : "Save"));
+    
+      __out.push('\n    </button>\n  </div>\n\n  <div class="f f-location">\n    <!--label>Name of the place you are writing about</label-->\n    <input placeholder="Location" type="text" name="place" value="');
     
       __out.push(__sanitize(this.model.get('place')));
     

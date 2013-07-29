@@ -11,6 +11,8 @@
     <h1>
       Show post
     </h1>
+
+    <a href="#posts/<%= @model.id %>/edit" class="button right">Edit</a>
   </div>
 
   <div class="post-header">
@@ -31,6 +33,8 @@
   <div class="actions">
     <button>Share</button>
     <button>Like</button>
+    <!-- replace with some kind of little rubbish bin icon -->
+    <button class="destroy">Destroy post</button>
   </div>
 
   <div class="content">

@@ -14,7 +14,7 @@
     }
     __extends(Post, Backbone.Model);
     Post.prototype.initialize = function() {};
-    Post.prototype.url = "/posts";
+    Post.prototype.urlRoot = "/posts";
     return Post;
   })();
   this.Post = Post;

@@ -5,6 +5,7 @@ class PostsShowView extends Backbone.View
 
   events: {
     'click button.left' : 'onBack'
+    'click button.destroy' : 'onDestroy'
   }
   
   render: ->
@@ -13,5 +14,12 @@ class PostsShowView extends Backbone.View
 
   onBack: =>
     window.location.hash = "#"
+    
+  onDestroy: ->
+    if confirm('Are you sure you want to delete this post?')
+      @model.destroy {
+        success : =>
+          alert("Beepity boop!")
+      }
     
 @PostsShowView = PostsShowView

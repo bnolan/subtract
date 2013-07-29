@@ -20,7 +20,7 @@
 <div class="background">
   <div class="header-card">
     <h3>
-      Explore Posts
+      Ben-ns Blog
     </h3>
     <p class="meta">
       <b>META</b> | <b>META</b> | <b>META</b>
@@ -32,7 +32,7 @@
       <h3><%= post.get('place') %></h3>
       <img class="map" src="<%= @getMapUrl(post) %>">
       <div class="content">
-        <%= post.get('content').slice(0,120) + "..." %>
+        <%= post.get('content') %>
       </div>
       <div class="meta">
         <%= post.get('created_at') %>

@@ -18,7 +18,8 @@
       return this.render();
     };
     PostsShowView.prototype.events = {
-      'click button.left': 'onBack'
+      'click button.left': 'onBack',
+      'click button.destroy': 'onDestroy'
     };
     PostsShowView.prototype.render = function() {
       $(this.el).html(this.template(this));
@@ -26,6 +27,15 @@
     };
     PostsShowView.prototype.onBack = function() {
       return window.location.hash = "#";
+    };
+    PostsShowView.prototype.onDestroy = function() {
+      if (confirm('Are you sure you want to delete this post?')) {
+        return this.model.destroy({
+          success: __bind(function() {
+            return alert("Beepity boop!");
+          }, this)
+        });
+      }
     };
     return PostsShowView;
   })();

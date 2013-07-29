@@ -17,7 +17,8 @@
       "posts/:id/edit": "edit",
       "posts/new": "create",
       "posts/:id": "show",
-      "": "explore"
+      "": "explore",
+      "map": "map"
     };
     PostsRouter.prototype.show = function(id) {
       return new PostsShowView({
@@ -25,14 +26,26 @@
         model: app.getPost(id)
       });
     };
-    PostsRouter.prototype.create = function(id) {
+    PostsRouter.prototype.create = function() {
       return new PostsNewView({
         el: $('body'),
         model: new Post
       });
     };
+    PostsRouter.prototype.edit = function(id) {
+      return new PostsNewView({
+        el: $('body'),
+        model: app.getPost(id)
+      });
+    };
     PostsRouter.prototype.explore = function() {
       return new PostsExploreView({
+        el: $('body'),
+        collection: app.getPublicPosts()
+      });
+    };
+    PostsRouter.prototype.map = function() {
+      return new PostsMapView({
         el: $('body'),
         collection: app.getPublicPosts()
       });

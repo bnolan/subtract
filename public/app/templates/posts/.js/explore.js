@@ -43,7 +43,7 @@ this.$templates.postsExplore = function (__obj) {
     (function() {
       var post, _i, _len, _ref;
     
-      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="header">\n  <h1>\n    Explore\n  </h1>\n\n  <a href="#posts/new" class="button right">Post</a>\n</div>\n\n<div class="splitter">\n  <a href="#">Chronological</a>\n  <a href="#map">Cartographical</a>\n</div>\n\n<div class="background">\n  <div class="header-card">\n    <h3>\n      Explore Posts\n    </h3>\n    <p class="meta">\n      <b>META</b> | <b>META</b> | <b>META</b>\n    </p>\n  </div>\n\n  ');
+      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="header">\n  <h1>\n    Explore\n  </h1>\n\n  <a href="#posts/new" class="button right">Post</a>\n</div>\n\n<div class="splitter">\n  <a href="#">Chronological</a>\n  <a href="#map">Cartographical</a>\n</div>\n\n<div class="background">\n  <div class="header-card">\n    <h3>\n      Ben-ns Blog\n    </h3>\n    <p class="meta">\n      <b>META</b> | <b>META</b> | <b>META</b>\n    </p>\n  </div>\n\n  ');
     
       _ref = this.collection.models;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -55,7 +55,7 @@ this.$templates.postsExplore = function (__obj) {
         __out.push('</h3>\n      <img class="map" src="');
         __out.push(__sanitize(this.getMapUrl(post)));
         __out.push('">\n      <div class="content">\n        ');
-        __out.push(__sanitize(post.get('content').slice(0, 120) + "..."));
+        __out.push(__sanitize(post.get('content')));
         __out.push('\n      </div>\n      <div class="meta">\n        ');
         __out.push(__sanitize(post.get('created_at')));
         __out.push('\n      </div>\n    </div>\n  ');
