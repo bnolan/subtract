@@ -5,15 +5,23 @@
 -->
 
 <div class="header">
+  <% if app.getCurrentUser(): %>
+    <a href="/signout" class="button left">Out</a>
+  <% else: %>
+    <a href="/auth/twitter" class="button left">In</a>
+  <% end %>
+
   <h1>
-    Explore
+    Home
   </h1>
 
-  <a href="#posts/new" class="button right">Post</a>
+  <% if app.getCurrentUser(): %>
+    <a href="#posts/new" class="button right">Post</a>
+  <% end %>
 </div>
 
 <div class="splitter">
-  <a href="#">Chronological</a>
+  <a href="#">Chronological</a> |
   <a href="#map">Cartographical</a>
 </div>
 

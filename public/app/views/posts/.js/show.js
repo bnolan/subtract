@@ -37,6 +37,28 @@
         });
       }
     };
+    PostsShowView.prototype.getTwitterUrl = function() {
+      var components, k, params, v;
+      params = {
+        original_referer: window.location.toString(),
+        text: this.model.get('content').slice(0, 50) + "... " + window.location.toString(),
+        tw_p: "tweetbutton",
+        via: "subtractin"
+      };
+      components = (function() {
+        var _results;
+        _results = [];
+        for (k in params) {
+          v = params[k];
+          _results.push([k, encodeURIComponent(v)].join("="));
+        }
+        return _results;
+      })();
+      return "https://twitter.com/intent/tweet?" + components.join("&");
+    };
+    PostsShowView.prototype.getMapUrl = function() {
+      return "https://www.google.com/maps/preview?q=" + (this.model.get('latitude')) + "," + (this.model.get('longitude'));
+    };
     return PostsShowView;
   })();
   this.PostsShowView = PostsShowView;

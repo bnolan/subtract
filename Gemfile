@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 # gem 'sqlite3'
 gem 'pg'
 
+gem 'omniauth-twitter'
+
 gem 'json'
 
 # Gems used only for assets and not required

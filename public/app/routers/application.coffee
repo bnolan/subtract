@@ -10,9 +10,17 @@ class Application
     @publicPosts = new PostCollection
     @publicPosts.url = "/posts"
     @publicPosts.fetch {
-      success : @onStart
+      success : @fetchUser
     }
+    
+  fetchUser: =>
+    $.getJSON '/status', (response) =>
+      @currentUser = response
+      @onStart()
 
+  getCurrentUser: ->
+    @currentUser
+    
   onStart: =>
     # Then start backbone
     Backbone.history.start()

@@ -10,7 +10,7 @@ class PostsMapView extends Backbone.View
     
   addMap: ->
     options = {
-      center : new google.maps.LatLng(45, 0)
+      center : new google.maps.LatLng(-45, 0)
       zoom : 15
       mapTypeId : google.maps.MapTypeId.ROADMAP
     }

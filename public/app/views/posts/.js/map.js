@@ -25,7 +25,7 @@
     PostsMapView.prototype.addMap = function() {
       var markerCluster, options;
       options = {
-        center: new google.maps.LatLng(45, 0),
+        center: new google.maps.LatLng(-45, 0),
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };

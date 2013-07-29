@@ -21,5 +21,23 @@ class PostsShowView extends Backbone.View
         success : =>
           alert("Beepity boop!")
       }
+
+  # helper methods used by the view
+  
+  getTwitterUrl: ->
+    params = {
+      original_referer : window.location.toString()
+      text : @model.get('content').slice(0,50) + "... " + window.location.toString()
+      tw_p : "tweetbutton"
+      via : "subtractin"
+    }
+
+    components = for k,v of params
+      [k,encodeURIComponent(v)].join("=")
+
+    "https://twitter.com/intent/tweet?" + components.join("&")
+
+  getMapUrl: ->
+    "https://www.google.com/maps/preview?q=#{@model.get('latitude')},#{@model.get('longitude')}"
     
 @PostsShowView = PostsShowView

@@ -42,7 +42,7 @@ this.$templates.postsMap = function (__obj) {
   (function() {
     (function() {
     
-      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="posts-map">\n  <div class="header">\n    <a href="#" class="button left">&laquo;</a>\n\n    <h1>\n      Cartography\n    </h1>\n  </div>\n\n  <div id="map" style="height: 480px">\n  </div>\n  \n  <div id="search">\n    <input type="search" />\n  </div>\n</duv>');
+      __out.push('<!--\n\n  Your eco template goes here...\n  \n-->\n\n<div class="posts-map">\n  <div class="header">\n    <a href="#" class="button left">&laquo;</a>\n\n    <h1>\n      Cartography\n    </h1>\n  </div>\n\n  <div class="splitter">\n    <a href="#">Chronological</a> |\n    <a href="#map">Cartographical</a>\n  </div>\n\n  <div id="map" style="height: 480px">\n  </div>\n  \n  <div id="search">\n    <input type="search" />\n  </div>\n</duv>');
     
     }).call(this);
     

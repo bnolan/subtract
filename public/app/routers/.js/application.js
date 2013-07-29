@@ -4,6 +4,7 @@
   Application = (function() {
     function Application() {
       this.onStart = __bind(this.onStart, this);;
+      this.fetchUser = __bind(this.fetchUser, this);;
     }
     Application.prototype.start = function() {
       console.log('App started');
@@ -11,8 +12,17 @@
       this.publicPosts = new PostCollection;
       this.publicPosts.url = "/posts";
       return this.publicPosts.fetch({
-        success: this.onStart
+        success: this.fetchUser
       });
+    };
+    Application.prototype.fetchUser = function() {
+      return $.getJSON('/status', __bind(function(response) {
+        this.currentUser = response;
+        return this.onStart();
+      }, this));
+    };
+    Application.prototype.getCurrentUser = function() {
+      return this.currentUser;
     };
     Application.prototype.onStart = function() {
       return Backbone.history.start();

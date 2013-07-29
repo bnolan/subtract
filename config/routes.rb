@@ -51,7 +51,11 @@ Mappst::Application.routes.draw do
   
   resources :posts
   
-  # root :to => 'posts#index'
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :signout
+  match "/status" => "sessions#status"
+  
+  root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 
