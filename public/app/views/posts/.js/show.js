@@ -57,7 +57,7 @@
       return "https://twitter.com/intent/tweet?" + components.join("&");
     };
     PostsShowView.prototype.getMapUrl = function() {
-      return "https://www.google.com/maps/preview?q=" + (this.model.get('latitude')) + "," + (this.model.get('longitude'));
+      return "https://maps.google.com/?q=" + (this.model.get('latitude')) + "," + (this.model.get('longitude'));
     };
     return PostsShowView;
   })();

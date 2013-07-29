@@ -38,6 +38,6 @@ class PostsShowView extends Backbone.View
     "https://twitter.com/intent/tweet?" + components.join("&")
 
   getMapUrl: ->
-    "https://www.google.com/maps/preview?q=#{@model.get('latitude')},#{@model.get('longitude')}"
+    "https://maps.google.com/?q=#{@model.get('latitude')},#{@model.get('longitude')}"
     
 @PostsShowView = PostsShowView
