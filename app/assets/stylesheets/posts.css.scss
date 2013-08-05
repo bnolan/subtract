@@ -125,6 +125,7 @@ form{
       border: none;
       padding: 8px;
       box-sizing: border-box;
+      -webkit-appearance: none;
       resize: none;
     }
     
@@ -144,21 +145,25 @@ form{
   }
   
   .f-place-selected{
+    position: relative;
+
     button{
       display: inline-block;
       width: 80px;
-      float: right;
-      position: relative;
+      position: absolute;
       top: 8px;
+      right: 8px;
+      z-index: 1000;
     }
+    
     input, address{
-      width: calc(100% - 110px) !important;
+      width: calc(100% - 120px) !important;
     }
     address{
       display: block;
-      padding: 0 8px 8px 8px;
+      padding: 0 8px 0 8px;
       position: relative;
-      top: -16px;
+      top: -8px;
       color: #999;
       font-size: 0.85em;
       font-style: normal;
@@ -166,6 +171,21 @@ form{
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+  }
+  
+  .f-blog{
+    input{
+      display: none;
+    }
+  }
+  
+  .f-blog-create{
+    input{
+      display: block;
+    }
+    select{
+      display: none;
     }
   }
   

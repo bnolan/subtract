@@ -7,10 +7,32 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+
+    @blog = if params[:blog_id]
+      Blog.find(params[:blog_id])
+    else
+      @post.blog
+    end
   end
     
   def create
-    redirect_to Post.create!(params[:post])
+    post = current_user.posts.build(post_params)
+    
+    if params[:post][:blog_id].match /Create/
+      blog = current_user.blogs.build(blog_params)
+
+      if blog.save
+        post.blog_id = blog.id
+      else
+        raise Exception, "Boohoo"
+      end
+    end
+
+    if post.save
+      redirect_to post
+    else
+      raise Exception, "Boohoo"
+    end
   end
   
   def update
@@ -25,4 +47,14 @@ class PostsController < ApplicationController
     render :json => { :success => true }
   end
 
+  private
+  
+  def post_params
+    params.require(:post).permit(:place, :content, :address, :latitude, :longitude, :blog_id)
+  end
+  
+  def blog_params
+    params.require(:blog).permit(:name)
+  end
+  
 end

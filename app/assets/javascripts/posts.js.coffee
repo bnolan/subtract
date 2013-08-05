@@ -7,6 +7,13 @@ class PostDialog
     @autocomplete = new google.maps.places.Autocomplete($("#post_place")[0])
     google.maps.event.addListener @autocomplete, 'place_changed', @onAutocompletion
     
+    # Look for changes to the blog
+    $("select").change @onSelectBlog
+    
+  onSelectBlog: =>
+    if $("select").val().match /Create/
+      $(".f-blog").addClass('f-blog-create').find('input').focus()
+    
   onAutocompletion: =>
     place = @autocomplete.getPlace()
     console.log place
@@ -24,8 +31,8 @@ class PostDialog
       alert "something..."
     else
       # set the details
-      $("#place_latitude").val(place.geometry.location.lat())
-      $("#place_longitude").val(place.geometry.location.lng())
+      $("#post_latitude").val(place.geometry.location.lat())
+      $("#post_longitude").val(place.geometry.location.lng())
     
     # hide the tabs
     $(".tabs").hide()

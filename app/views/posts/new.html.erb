@@ -20,8 +20,11 @@
       <address>1278 cuba street, blah blah blah</address>
     </div>
 
-    <div class="f">
-      <%= f.select :blog_id, ["Select a Blog"] + ['———————'] + Blog.all.collect { |blog| [blog.name, blog.id] } %>
+    <div class="f f-blog">
+      <%= f.select :blog_id, ["Select a Blog"] + [''] + Blog.all.collect { |blog| [blog.name, blog.id] } + [''] + ["Create a new Blog"] %>
+      <%= fields_for Blog.new do |ff| %>
+        <%= ff.text_field :name, :placeholder => "Name of Blog" %>
+      <% end %>
     </div>
 
     <%= f.hidden_field :address %>

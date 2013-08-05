@@ -1,0 +1,26 @@
+<header id="header">
+  <%= link_to "< Back", blog_path(@blog), :class => 'button left' %>
+  
+  <h1><%= truncate(@post.place) %></h1>
+
+  <%= link_to "Edit", edit_blog_post_path(@blog, @post), :class => 'button right' %>
+</header>
+
+<section>
+  <div class="post">
+    <h2>
+      <%= link_to @post.place, [@blog, @post] %>
+    </h2>
+    <address><%= @post.address || "34 Some Street, Blah blah" %></address>
+    <div class="map">
+      <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{@post.longitude},#{@post.latitude})/#{@post.longitude},#{@post.latitude},14/480x160.png", :class => 'static-map' %>
+      <%= image_tag "map-overlay.png", :class => 'map-overlay' %>
+    </div>
+    <div class="content">
+      <%= simple_format @post.content %>
+    </div>
+    <small class="meta">
+      Posted <%= time_ago_in_words @post.created_at %> ago.
+    </small>
+  </div>
+</section>
