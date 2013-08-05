@@ -1,0 +1,3 @@
+<% @blog.errors.each do |k,v| %>
+  alert(<%= ["Error:\n\n", k,v].join(" ").to_json.html_safe %>);
+<% end %>

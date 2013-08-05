@@ -1,0 +1,8 @@
+<header id="header">
+  <h1>New Post</h1>
+</header>
+
+<%= form_for(Blog.new, remote: true) do |f| %>
+  <%= f.text_field :name, :placeholder => "Name this blog", :id => "new-blog", :autofocus => true, "data-behavior" => "submit_on_enter" %>
+  <%= submit_tag "Create" %>
+<% end %>

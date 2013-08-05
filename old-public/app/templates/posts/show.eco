@@ -1,0 +1,42 @@
+<!--
+
+  Your eco template goes here...
+  
+-->
+
+<div class="header">
+  <a href="#" class="button left">&lt;</a>
+
+  <h1>
+    Show Blog
+  </h1>
+</div>
+
+<div class="splitter">
+  <a href="#blogs/<%= @model.id %>">Chronological</a> |
+  <a href="#blogs/<%= @model.id %>/map">Cartographical</a>
+</div>
+
+<div class="background">
+  <div class="header-card">
+    <h3>
+      <%= @model.get('name') %>
+    </h3>
+    <p class="meta">
+      <b>META</b> | <b>META</b> | <b>META</b>
+    </p>
+  </div>
+
+  <% for post in @model.getPosts().models: %>
+    <div class="post-card" data-id="<%= post.id %>">
+      <h3><%= post.get('place') %></h3>
+      <img class="map" src="<%= @getMapUrl(post) %>">
+      <div class="content">
+        <%= post.get('content') %>
+      </div>
+      <div class="meta">
+        <%= post.get('created_at') %>
+      </div>
+    </div>
+  <% end %>
+</div>

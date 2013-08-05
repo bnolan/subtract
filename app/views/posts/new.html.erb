@@ -1,0 +1,49 @@
+<header id="header">
+  <%= link_to "< Back", root_path, :class => 'button left' %>
+  
+  <h1>New Post</h1>
+
+  <%= link_to_function "Post", "$('form').submit()", :class => 'button right' %>
+</header>
+
+<section>
+  <%= form_for Post.new, :remote => true do |f| %>
+    <ul class="tabs">
+      <li class="active">Search for<br /><b>Establishment</b></li>
+      <li>Search for<br /><b>Locality</b></li>
+      <li>Use current<br /><b>Location</b></li>
+    </ul>
+    
+    <div class="f f-place">
+      <%= f.text_field :place, :placeholder => "Name of Establishment" %>
+      <button>Change</button>
+      <address>1278 cuba street, blah blah blah</address>
+    </div>
+
+    <div class="f">
+      <%= f.select :blog_id, ["Select a Blog"] + ['———————'] + Blog.all.collect { |blog| [blog.name, blog.id] } %>
+    </div>
+
+    <%= f.hidden_field :address %>
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
+  
+    <%# image_tag "https://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2.png" %>
+  
+    <!--div class="f">
+      <%= f.text_field :title, :placeholder => "Title" %>
+    </div-->
+  
+    <div class="f">
+      <%= f.text_area :content, :placeholder => "Post Content" %>
+    </div>
+  <% end %>
+</section>
+
+<div style="width: 100px; height: 100px" id="map"></div>
+
+<script>
+  $(function(){
+    new PostDialog
+  });
+</script>

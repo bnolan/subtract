@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mappst::Application.load_tasks
+Subtract::Application.load_tasks

@@ -1,3 +1,93 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin gradient($from, $to) {
+  background-color: $from;
+  background-image: -moz-linear-gradient($from, $to);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+  background-image: -webkit-linear-gradient($from, $to);
+  background-image: -o-linear-gradient($from, $to);
+}
+
+$bg: #f70;
+$fc: #444;
+
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'helvetica neue', roboto, sans-serif;
+  font-size: 18px;
+  color: $fc;
+}
+
+section{
+  margin-top: 50px;
+}
+
+.button, button{
+  background: white;
+  border-radius: 5px;
+  color: #666;
+  text-decoration: none;
+  line-height: 35px;
+  padding: 0 10px;
+  font-size: 0.8em;
+  margin: 8px;
+  border: none;
+}
+
+header{
+  position: fixed;
+  z-index: 9000; /* over 9000! */
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+  border-top: 1px solid lighten($bg, 5%);
+  border-bottom: 1px solid darken($bg, 5%);
+  @include gradient($bg, lighten($bg, 10%));
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  button, .button{
+    display: block;
+  }
+  
+  .button.left{
+    float: left;
+  }
+  
+  .button.right{
+    float: right;
+  }
+
+  h1{
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    display: block;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    font-size: 1.2em;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+.default-text{
+  line-height: 400px;
+  text-shadow: 1px 1px 1px white;
+  color: #555;
+  text-align: center;
+  font-size: 0.7em;
+}

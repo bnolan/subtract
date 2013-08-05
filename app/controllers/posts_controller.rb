@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
+  before_filter :user_required, :only => [:new, :create, :edit, :update, :destroy]
   
   def index
     @posts = Post.order('created_at desc').all
-    render :json => @posts
   end
   
   def show
-    render :json => Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
     
   def create
-    render :json => Post.create!(params[:post])
+    redirect_to Post.create!(params[:post])
   end
   
   def update

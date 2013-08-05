@@ -1,0 +1,38 @@
+<header id="header">
+  <%= link_to "< Back", root_path, :class => 'button left' %>
+  
+  <h1><%= @blog.name %></h1>
+
+  <%= link_to "+ Post", new_blog_post_path(@blog), :class => 'button right' %>
+</header>
+
+<section>
+  <div class="map overview-map">
+    <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{@blog.longitude},#{@blog.latitude})/#{@blog.longitude},#{@blog.latitude},1/480x160.png", :class => 'static-map' %>
+    <%= image_tag "map-overlay.png", :class => 'map-overlay' %>
+    <div class="description">
+      Created by @<%= @blog.user.name %> in <%= @blog.created_at.strftime("%B %Y") %>.
+    </div>
+  </div>
+
+  <% @blog.posts.each do |post| %>
+    <div class="post">
+      <h2>
+        <%= link_to post.place, [@blog, post] %>
+        <span class="chevron">&raquo;</span>
+      </h2>
+      <address><%= link_to (post.address || "34 Some Street, Blah blah"), [@blog, post] %></address>
+      <div class="map">
+        <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},14/480x160.png", :class => 'static-map' %>
+        <%= image_tag "map-overlay.png", :class => 'map-overlay' %>
+      </div>
+      <div class="content">
+        <%= simple_format post.content %>
+      </div>
+      <small class="meta">
+        Posted <%= time_ago_in_words post.created_at %> ago.
+      </small>
+      <%# image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},15/320x240.png" %>
+    </div>
+  <% end %>
+</section>

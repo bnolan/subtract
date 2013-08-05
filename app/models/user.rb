@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :provider, :uid
-
+  has_many :posts
+  has_many :blogs
+  
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -8,4 +9,9 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["nickname"]
     end
   end
+  
+  def invited?
+    name == 'bnolan'
+  end
+  
 end

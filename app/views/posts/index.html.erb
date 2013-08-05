@@ -1,15 +1,40 @@
-<%= render :partial => 'new' %>
+<header id="header">
+  <% if current_user %>
+    <%= link_to "Log out", signout_path, :class => 'button left' %>
+  <% else %>
+    <%= link_to "Log in", "/auth/twitter", :class => 'button left' %>
+  <% end %>
 
-<% @posts.each do |post| %>
-  <div class="post">
-    <h3><%= post.place %></h3>
-    <h4><%= post.title %></h4>
-    <div class="content">
-      <%= simple_format post.content %>
+  <h1>Subtract</h1>
+
+  <% if current_user && current_user.invited? %>
+    <%= link_to "+ Post", new_post_path, :class => 'button right' %>
+  <% end %>
+</header>
+
+<section>
+
+  <p class="default-text">
+    There is nothing here yet.
+  </p>
+
+  <% if @posts.empty? %>
+    <p>
+      You have no posts in this blog yet.
+    </p>
+  <% end %>
+
+  <% [].each do |post| %>
+    <div class="post">
+      <h3><%= link_to post.place, post %></h3>
+      <h4><%= post.title %></h4>
+      <div class="content">
+        <%= simple_format post.content %>
+      </div>
+      <small class="meta">
+        Posted <%= time_ago_in_words post.created_at %> ago.
+      </small>
+      <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},15/320x240.png" %>
     </div>
-    <small class="meta">
-      Posted <%= time_ago_in_words post.created_at %> ago.
-    </small>
-    <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},15/320x240.png" %>
-  </div>
-<% end %>
+  <% end %>
+</section>
