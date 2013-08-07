@@ -34,11 +34,31 @@ class PostsController < ApplicationController
       raise Exception, "Boohoo"
     end
   end
+
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
   
   def update
-    post = Post.find(params[:id])
-    post.update_attributes! params[:post]
-    render :json => { :success => true }
+    post = current_user.posts.find(params[:id])
+    post.attributes = post_params
+    
+    if params[:post][:blog_id].match /Create/
+      blog = current_user.blogs.build(blog_params)
+
+      if blog.save
+        post.blog_id = blog.id
+      else
+        raise Exception, "Boohoo"
+      end
+    end
+    
+    if post.save
+      flash[:message] = "Changes to your post were saved"
+      redirect_to post
+    else
+      raise Exception, "Boohoohoo"
+    end
   end
   
   def destroy

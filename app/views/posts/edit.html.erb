@@ -1,14 +1,14 @@
 <header id="header">
   <%= link_to "< Back", root_path, :class => 'button left' %>
   
-  <h1>New Post</h1>
+  <h1>Edit Post</h1>
 
-  <%= link_to_function "Post", "$('form').submit()", :class => 'button right' %>
+  <%= link_to_function "Save", "$('form').submit()", :class => 'button right' %>
 </header>
 
 <section>
-  <%= form_for Post.new, :remote => true do |f| %>
-    <ul class="tabs">
+  <%= form_for @post do |f| %>
+    <ul class="tabs" style="display: none">
       <li class="active">Search for<br /><b>Establishment</b></li>
       <li>Search for<br /><b>Locality</b></li>
       <li>Use current<br /><b>Location</b></li>
@@ -17,7 +17,7 @@
     <div class="f f-place">
       <%= f.text_field :place, :placeholder => "Name of Establishment" %>
       <button>Change</button>
-      <address>1278 cuba street, blah blah blah</address>
+      <address><%= f.object.address %></address>
     </div>
 
     <div class="f f-blog">

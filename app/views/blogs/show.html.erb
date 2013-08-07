@@ -9,7 +9,7 @@
 <section>
   <div class="map overview-map">
     <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{@blog.longitude},#{@blog.latitude})/#{@blog.longitude},#{@blog.latitude},1/480x160.png", :class => 'static-map' %>
-    <%= image_tag "map-overlay.png", :class => 'map-overlay' %>
+    <%# image_tag "map-overlay.png", :class => 'map-overlay' %>
     <div class="description">
       Created by @<%= @blog.user.name %> in <%= @blog.created_at.strftime("%B %Y") %>.
     </div>
@@ -23,8 +23,8 @@
       </h2>
       <address><%= link_to (post.address || "34 Some Street, Blah blah"), [@blog, post] %></address>
       <div class="map">
-        <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},15/480x160.png", :class => 'static-map' %>
-        <%= image_tag "map-overlay.png", :class => 'map-overlay' %>
+        <%= image_tag "http://api.tiles.mapbox.com/v3/examples.map-vyofok3q/pin-m-star+ff6633(#{post.longitude},#{post.latitude})/#{post.longitude},#{post.latitude},15/480x160.png", :class => 'static-map', :width => 480, :height => 160 %>
+        <%# image_tag "map-overlay.png", :class => 'map-overlay' %>
       </div>
       <div class="content">
         <%= simple_format post.content %>
