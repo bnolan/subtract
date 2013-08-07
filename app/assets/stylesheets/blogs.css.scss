@@ -1,3 +1,32 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.blog{
+  display: block;
+  text-decoration: none;
+  padding: 12px 8px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  position: relative;
+  
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .meta{
+    font-size: 0.75em;
+    color: #999;
+  }
+
+  .chevron{
+    font-weight: bold;
+    color: #aaa;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    line-height: 60px;
+  }
+
+}

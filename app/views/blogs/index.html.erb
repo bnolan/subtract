@@ -16,9 +16,10 @@
 
   <% Blog.all.each do |blog| %>
 
-    <a href="<%= path_for blog %>">
+    <a class="blog" href="<%= blog_path(blog) %>">
       <h3><%= blog.name %></h3>
       <p class="meta">Created by <%= blog.user.name %>, <%= time_ago_in_words blog.created_at %> ago. Has <%= pluralize blog.posts.count, 'post' %>.</p>
+      <span class="chevron">&raquo;</span>
     </a>
 
   <% end %>
