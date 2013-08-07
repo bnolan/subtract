@@ -59,7 +59,7 @@ Subtract::Application.routes.draw do
   get "/signout" => "sessions#destroy", :as => :signout
   get "/status" => "sessions#status"
   
-  root :to => 'posts#index'
+  root :to => 'blogs#index'
 
   # See how all your routes lay out with "rake routes"
 

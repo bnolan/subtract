@@ -1,0 +1,26 @@
+<header id="header">
+  <% if current_user %>
+    <%= link_to "Log out", signout_path, :class => 'button left' %>
+  <% else %>
+    <%= link_to "Log in", "/auth/twitter", :class => 'button left' %>
+  <% end %>
+
+  <h1>Subtract</h1>
+
+  <% if current_user && current_user.invited? %>
+    <%= link_to "+ Post", new_post_path, :class => 'button right' %>
+  <% end %>
+</header>
+
+<section>
+
+  <% Blog.all.each do |blog| %>
+
+    <a href="<%= path_for blog %>">
+      <h3><%= blog.name %></h3>
+      <p class="meta">Created by <%= blog.user.name %>, <%= time_ago_in_words blog.created_at %> ago. Has <%= pluralize blog.posts.count, 'post' %>.</p>
+    </a>
+
+  <% end %>
+  
+</section>
